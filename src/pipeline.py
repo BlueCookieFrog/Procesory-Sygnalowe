@@ -34,6 +34,7 @@ class Pipeline:
         self.lowpass = None
         self.echo = None
         self.equalizer = None
+        self.karaoke = None
 
         if self.settings.highpass.enabled:
             self._highpass_filter()
@@ -46,6 +47,9 @@ class Pipeline:
 
         if self.settings.equalizer.enabled:
             self._equalizer()
+
+        if self.settings.karaoke.enabled:
+            self._karaoke()
 
         self.wavenc = Gst.ElementFactory.make("wavenc")
         self.filesink = Gst.ElementFactory.make("filesink")
@@ -108,12 +112,21 @@ class Pipeline:
 
         self.pipeline.add(self.equalizer)
 
+    def _karaoke(self) -> None:
+        """Adds karaoke element"""
+        self.karaoke = Gst.ElementFactory.make("audiokaraoke")
+        self.karaoke.set_property("filter-band", self.settings.karaoke.filter_band)
+        self.karaoke.set_property("filter-width", self.settings.karaoke.filter_width)
+        self.karaoke.set_property("level", self.settings.karaoke.level)
+        self.karaoke.set_property("mono-level", self.settings.karaoke.mono_level)
+
     def _link(self) -> None:
         elements = (
             self.highpass,
             self.lowpass,
             self.echo,
             self.equalizer,
+            self.karaoke,
         )
 
         last = None
@@ -163,13 +176,19 @@ if __name__ == "__main__":
     settings = pipeline_settings()
     # settings.highpass.enabled = True
     # settings.highpass.cutoff = 500.0
+
     # settings.lowpass.enabled = True
+
     # settings.echo.enabled = True
-    settings.equalizer.enabled = True
-    settings.equalizer.bands[0] = 12.0
-    settings.equalizer.bands[1] = 12.0
-    settings.equalizer.bands[2] = 12.0
-    settings.equalizer.bands[3] = 12.0
+    # settings.echo.delay = 5000
+    # settings.echo.feedback = 0.5
+    # settings.echo.intensity = 0.3
+
+    # settings.equalizer.enabled = True
+    # settings.equalizer.bands[0] = -24.0
+    # settings.equalizer.bands[1] = -24.0
+    # settings.equalizer.bands[2] = -24.0
+    # settings.equalizer.bands[3] = -24.0
     pipeline = Pipeline(settings)
     pipeline.graph_pipeline()
     pipeline.run()
