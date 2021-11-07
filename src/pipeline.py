@@ -3,7 +3,7 @@ import gi
 gi.require_version("Gst", "1.0")
 gi.require_version("GstAudio", "1.0")
 from gi.repository import Gst, GObject, GLib
-from settings import pipeline_settings
+from settings import karaoke_settings, pipeline_settings
 import os
 
 Gst.init(None)
@@ -22,13 +22,16 @@ class Pipeline:
 
         self.settings = settings
 
+        # Filesrc
         self.src = Gst.ElementFactory.make("filesrc")
         self.src.set_property("location", self.settings.input_file)
 
+        # Decodebin
         self.decodebin = Gst.ElementFactory.make("decodebin")
         self.decodebin.connect("pad-added", self._on_pad_added)
+
         # Audio convert
-        self.audioconvert = Gst.ElementFactory.make('audioconvert', 'convert')
+        self.audioconvert = Gst.ElementFactory.make("audioconvert", "convert")
 
         self.highpass = None
         self.lowpass = None
@@ -120,7 +123,10 @@ class Pipeline:
         self.karaoke.set_property("level", self.settings.karaoke.level)
         self.karaoke.set_property("mono-level", self.settings.karaoke.mono_level)
 
+        self.pipeline.add(self.karaoke)
+
     def _link(self) -> None:
+        """Links enabled elements"""
         elements = (
             self.highpass,
             self.lowpass,
@@ -131,15 +137,19 @@ class Pipeline:
 
         last = None
         for each in elements:
+            #Link elements together
             if each and last:
                 last.link(each)
                 last = each
             elif each:
+                # Link first element
                 self.audioconvert.link(each)
                 last = each
         if last:
+            #Link last element to wavenc
             last.link(self.wavenc)
         else:
+            #Handle no linked elements
             raise SystemExit("Error: No elements were created")
 
     def run(self) -> None:
@@ -163,6 +173,7 @@ class Pipeline:
         self.kill()
 
     def graph_pipeline(self) -> None:
+        """Generates pipeline graph"""
         with open("/tmp/pipeline.dot", "w") as f:
             f.write(Gst.debug_bin_to_dot_data(self.pipeline, Gst.DebugGraphDetails.ALL))
         try:
@@ -189,6 +200,10 @@ if __name__ == "__main__":
     # settings.equalizer.bands[1] = -24.0
     # settings.equalizer.bands[2] = -24.0
     # settings.equalizer.bands[3] = -24.0
+
+    # settings.karaoke.enabled = True
+    # settings.karaoke.filter_band = 220
+
     pipeline = Pipeline(settings)
     pipeline.graph_pipeline()
     pipeline.run()
