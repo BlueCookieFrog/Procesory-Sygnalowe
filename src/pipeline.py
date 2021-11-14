@@ -3,7 +3,7 @@ import gi
 gi.require_version("Gst", "1.0")
 gi.require_version("GstAudio", "1.0")
 from gi.repository import Gst, GObject, GLib
-from settings import karaoke_settings, pipeline_settings
+from src.settings import pipeline_settings
 import os
 
 Gst.init(None)
@@ -70,7 +70,7 @@ class Pipeline:
         self.wavenc.link(self.filesink)
         self._link()
 
-    def _on_pad_added(self, decodebin, pad):
+    def _on_pad_added(self, decodebin, pad) -> None:
         """Used as callback to connect decodebin to the pipeline."""
         caps = pad.get_current_caps()
         compatible_pad = self.audioconvert.get_compatible_pad(pad, caps)
@@ -137,7 +137,7 @@ class Pipeline:
 
         last = None
         for each in elements:
-            #Link elements together
+            # Link elements together
             if each and last:
                 last.link(each)
                 last = each
@@ -146,10 +146,10 @@ class Pipeline:
                 self.audioconvert.link(each)
                 last = each
         if last:
-            #Link last element to wavenc
+            # Link last element to wavenc
             last.link(self.wavenc)
         else:
-            #Handle no linked elements
+            # Handle no linked elements
             raise SystemExit("Error: No elements were created")
 
     def run(self) -> None:
@@ -185,15 +185,22 @@ class Pipeline:
 if __name__ == "__main__":
 
     settings = pipeline_settings()
+
+    # self.input_file: str = (
+    #     "/home/borys/Documents/_Git/Procesory-Sygnalowe/sample.wav"
+    # )
     # settings.highpass.enabled = True
     # settings.highpass.cutoff = 500.0
 
     # settings.lowpass.enabled = True
+    # settings.lowpass.cutoff = 1000
+    # settings.lowpass.type = 1
 
     # settings.echo.enabled = True
-    # settings.echo.delay = 5000
-    # settings.echo.feedback = 0.5
-    # settings.echo.intensity = 0.3
+    # settings.echo.delay = 3000000000
+    # settings.echo.feedback = 1
+    # settings.echo.intensity = 1
+    # settings.echo.max_delay = 30000000000
 
     # settings.equalizer.enabled = True
     # settings.equalizer.bands[0] = -24.0
