@@ -59,7 +59,9 @@ def main():
     )
 
     # Equalizer
-    ui.enable_Equalizer.stateChanged.connect(lambda: methods.update_equalizer_settings())
+    ui.enable_Equalizer.stateChanged.connect(
+        lambda: methods.update_equalizer_settings()
+    )
     ui.verticalSlider_0.valueChanged.connect(
         lambda: methods.update_equalizer_settings()
     )

@@ -67,7 +67,7 @@ class echo_settings:
     delay: int = 1000000  # 1000000 (ns) -> 1ms
     feedback: float = 0.0  # 0.0 (percent)
     intensity: float = 0.0  # 0.0 (percent)
-    max_delay: int = 1  # 1 (ns)
+    max_delay: int = 1000000  # 1 (ns)
 
 
 @dataclass(repr=True)

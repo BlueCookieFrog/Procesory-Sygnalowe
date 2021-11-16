@@ -28,7 +28,7 @@ class UiMethods:
             self.ui.FilePath.setText(file)
             self.ui.Run.setEnabled(True)
 
-    def save_path(self, file:str):
+    def save_path(self, file: str):
         """Checks if user typed extension"""
 
         if file.endswith(".wav"):
@@ -84,7 +84,9 @@ class UiMethods:
         """Updates echo settings"""
         self.settings.echo.enabled = self.ui.enable_Echo.isChecked()
 
-        self.settings.echo.delay = self.ui.echo_delay.value() * 1000000 #Gstreamer uses ns so we convert it to ms
+        self.settings.echo.delay = (
+            self.ui.echo_delay.value() * 1000000
+        )  # Gstreamer uses ns so we convert it to ms
         self.settings.echo.feedback = self.ui.echo_feedback.value()
         self.settings.echo.intensity = self.ui.echo_intensity.value()
         self.settings.echo.max_delay = self.settings.echo.delay * 10
