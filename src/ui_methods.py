@@ -87,8 +87,8 @@ class UiMethods:
         self.settings.echo.delay = (
             self.ui.echo_delay.value() * 1000000
         )  # Gstreamer uses ns so we convert it to ms
-        self.settings.echo.feedback = self.ui.echo_feedback.value()
-        self.settings.echo.intensity = self.ui.echo_intensity.value()
+        self.settings.echo.feedback = self.ui.echo_feedback.value() / 100
+        self.settings.echo.intensity = self.ui.echo_intensity.value() / 100
         self.settings.echo.max_delay = self.settings.echo.delay * 10
 
     # Karaoke
@@ -98,8 +98,8 @@ class UiMethods:
 
         self.settings.karaoke.filter_band = self.ui.karaoke_filter_band.value()
         self.settings.karaoke.filter_width = self.ui.karaoke_filter_width.value()
-        self.settings.karaoke.level = self.ui.karaoke_level.value()
-        self.settings.karaoke.mono_level = self.ui.karaoke_mono_level.value()
+        self.settings.karaoke.level = self.ui.karaoke_level.value() / 100
+        self.settings.karaoke.mono_level = self.ui.karaoke_mono_level.value() / 100
 
     # Equalizer
     def update_equalizer_settings(self):
