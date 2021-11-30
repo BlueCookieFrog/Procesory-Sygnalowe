@@ -291,13 +291,9 @@ class Ui_ProcesorySygnaowe(object):
         self.highpass_cutoff = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.highpass_cutoff.setGeometry(QtCore.QRect(540, 90, 101, 27))
         self.highpass_cutoff.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.highpass_cutoff.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.highpass_cutoff.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.highpass_cutoff.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.highpass_cutoff.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.highpass_cutoff.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.highpass_cutoff.setDecimals(1)
         self.highpass_cutoff.setMaximum(100000.0)
         self.highpass_cutoff.setSingleStep(10.0)
@@ -310,13 +306,9 @@ class Ui_ProcesorySygnaowe(object):
         self.lowpass_cutoff = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.lowpass_cutoff.setGeometry(QtCore.QRect(540, 390, 101, 27))
         self.lowpass_cutoff.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.lowpass_cutoff.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.lowpass_cutoff.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lowpass_cutoff.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.lowpass_cutoff.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.lowpass_cutoff.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.lowpass_cutoff.setDecimals(1)
         self.lowpass_cutoff.setMaximum(100000.0)
         self.lowpass_cutoff.setSingleStep(10.0)
@@ -329,15 +321,12 @@ class Ui_ProcesorySygnaowe(object):
         self.highpass_length = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.highpass_length.setGeometry(QtCore.QRect(540, 130, 101, 27))
         self.highpass_length.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.highpass_length.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.highpass_length.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.highpass_length.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.highpass_length.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.highpass_length.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.highpass_length.setDecimals(1)
-        self.highpass_length.setMaximum(100000.0)
+        self.highpass_length.setMinimum(3.0)
+        self.highpass_length.setMaximum(256000.0)
         self.highpass_length.setSingleStep(10.0)
         self.highpass_length.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
         self.highpass_length.setProperty("value", 101.0)
@@ -359,15 +348,12 @@ class Ui_ProcesorySygnaowe(object):
         self.lowpass_poles = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.lowpass_poles.setGeometry(QtCore.QRect(540, 430, 101, 27))
         self.lowpass_poles.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.lowpass_poles.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.lowpass_poles.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lowpass_poles.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.lowpass_poles.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.lowpass_poles.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.lowpass_poles.setDecimals(1)
-        self.lowpass_poles.setMaximum(1000.0)
+        self.lowpass_poles.setMinimum(2.0)
+        self.lowpass_poles.setMaximum(32.0)
         self.lowpass_poles.setSingleStep(2.0)
         self.lowpass_poles.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
         self.lowpass_poles.setProperty("value", 4.0)
@@ -378,16 +364,12 @@ class Ui_ProcesorySygnaowe(object):
         self.lowpass_ripple = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.lowpass_ripple.setGeometry(QtCore.QRect(540, 470, 101, 27))
         self.lowpass_ripple.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.lowpass_ripple.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.lowpass_ripple.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lowpass_ripple.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.lowpass_ripple.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.lowpass_ripple.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.lowpass_ripple.setDecimals(2)
-        self.lowpass_ripple.setMaximum(20.0)
-        self.lowpass_ripple.setSingleStep(0.5)
+        self.lowpass_ripple.setMaximum(200.0)
+        self.lowpass_ripple.setSingleStep(0.25)
         self.lowpass_ripple.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
         self.lowpass_ripple.setProperty("value", 0.25)
         self.lowpass_ripple.setObjectName("lowpass_ripple")
@@ -398,9 +380,7 @@ class Ui_ProcesorySygnaowe(object):
         self.lowpass_type.setGeometry(QtCore.QRect(540, 510, 101, 26))
         self.lowpass_type.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lowpass_type.setAutoFillBackground(False)
-        self.lowpass_type.setSizeAdjustPolicy(
-            QtWidgets.QComboBox.AdjustToContentsOnFirstShow
-        )
+        self.lowpass_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
         self.lowpass_type.setObjectName("lowpass_type")
         self.lowpass_type.addItem("")
         self.lowpass_type.addItem("")
@@ -409,9 +389,7 @@ class Ui_ProcesorySygnaowe(object):
         self.label_23.setObjectName("label_23")
         self.echo_delay = QtWidgets.QSpinBox(self.centralwidget)
         self.echo_delay.setGeometry(QtCore.QRect(280, 390, 101, 27))
-        self.echo_delay.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.echo_delay.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.echo_delay.setPrefix("")
         self.echo_delay.setMaximum(100000)
         self.echo_delay.setSingleStep(10)
@@ -423,13 +401,9 @@ class Ui_ProcesorySygnaowe(object):
         self.echo_feedback = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.echo_feedback.setGeometry(QtCore.QRect(280, 430, 101, 27))
         self.echo_feedback.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.echo_feedback.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.echo_feedback.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.echo_feedback.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.echo_feedback.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.echo_feedback.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.echo_feedback.setDecimals(1)
         self.echo_feedback.setMaximum(100.0)
         self.echo_feedback.setSingleStep(1.0)
@@ -439,13 +413,9 @@ class Ui_ProcesorySygnaowe(object):
         self.echo_intensity = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.echo_intensity.setGeometry(QtCore.QRect(280, 470, 101, 27))
         self.echo_intensity.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.echo_intensity.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.echo_intensity.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.echo_intensity.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.echo_intensity.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.echo_intensity.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.echo_intensity.setDecimals(1)
         self.echo_intensity.setMaximum(100.0)
         self.echo_intensity.setSingleStep(1.0)
@@ -461,17 +431,11 @@ class Ui_ProcesorySygnaowe(object):
         self.karaoke_filter_band = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.karaoke_filter_band.setGeometry(QtCore.QRect(20, 390, 101, 27))
         self.karaoke_filter_band.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.karaoke_filter_band.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
-        self.karaoke_filter_band.setButtonSymbols(
-            QtWidgets.QAbstractSpinBox.UpDownArrows
-        )
-        self.karaoke_filter_band.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.karaoke_filter_band.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.karaoke_filter_band.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.karaoke_filter_band.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.karaoke_filter_band.setDecimals(1)
-        self.karaoke_filter_band.setMaximum(100000.0)
+        self.karaoke_filter_band.setMaximum(441.0)
         self.karaoke_filter_band.setSingleStep(10.0)
         self.karaoke_filter_band.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
         self.karaoke_filter_band.setProperty("value", 220.0)
@@ -479,34 +443,22 @@ class Ui_ProcesorySygnaowe(object):
         self.karaoke_filter_width = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.karaoke_filter_width.setGeometry(QtCore.QRect(20, 430, 101, 27))
         self.karaoke_filter_width.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.karaoke_filter_width.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
-        self.karaoke_filter_width.setButtonSymbols(
-            QtWidgets.QAbstractSpinBox.UpDownArrows
-        )
-        self.karaoke_filter_width.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.karaoke_filter_width.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.karaoke_filter_width.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.karaoke_filter_width.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.karaoke_filter_width.setSuffix("")
         self.karaoke_filter_width.setDecimals(1)
-        self.karaoke_filter_width.setMaximum(100000.0)
+        self.karaoke_filter_width.setMaximum(100.0)
         self.karaoke_filter_width.setSingleStep(10.0)
-        self.karaoke_filter_width.setStepType(
-            QtWidgets.QAbstractSpinBox.DefaultStepType
-        )
+        self.karaoke_filter_width.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
         self.karaoke_filter_width.setProperty("value", 100.0)
         self.karaoke_filter_width.setObjectName("karaoke_filter_width")
         self.karaoke_level = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.karaoke_level.setGeometry(QtCore.QRect(20, 470, 101, 27))
         self.karaoke_level.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.karaoke_level.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
+        self.karaoke_level.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.karaoke_level.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.karaoke_level.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.karaoke_level.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.karaoke_level.setDecimals(1)
         self.karaoke_level.setMaximum(100.0)
         self.karaoke_level.setSingleStep(1.0)
@@ -516,15 +468,9 @@ class Ui_ProcesorySygnaowe(object):
         self.karaoke_mono_level = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.karaoke_mono_level.setGeometry(QtCore.QRect(20, 510, 101, 27))
         self.karaoke_mono_level.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.karaoke_mono_level.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter
-        )
-        self.karaoke_mono_level.setButtonSymbols(
-            QtWidgets.QAbstractSpinBox.UpDownArrows
-        )
-        self.karaoke_mono_level.setCorrectionMode(
-            QtWidgets.QAbstractSpinBox.CorrectToNearestValue
-        )
+        self.karaoke_mono_level.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.karaoke_mono_level.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.karaoke_mono_level.setCorrectionMode(QtWidgets.QAbstractSpinBox.CorrectToNearestValue)
         self.karaoke_mono_level.setDecimals(1)
         self.karaoke_mono_level.setMaximum(100.0)
         self.karaoke_mono_level.setSingleStep(1.0)
@@ -556,49 +502,17 @@ class Ui_ProcesorySygnaowe(object):
 
     def retranslateUi(self, ProcesorySygnaowe):
         _translate = QtCore.QCoreApplication.translate
-        ProcesorySygnaowe.setWindowTitle(
-            _translate("ProcesorySygnaowe", "Procesory Sygnałowe")
-        )
+        ProcesorySygnaowe.setWindowTitle(_translate("ProcesorySygnaowe", "Procesory Sygnałowe"))
         self.enable_Equalizer.setText(_translate("ProcesorySygnaowe", "Enable"))
-        self.label.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center">Equalizer</p></body></html>',
-            )
-        )
+        self.label.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\">Equalizer</p></body></html>"))
         self.OpenFile.setText(_translate("ProcesorySygnaowe", "Open File"))
         self.Run.setText(_translate("ProcesorySygnaowe", "Run"))
         self.SaveFile.setText(_translate("ProcesorySygnaowe", "Save File"))
-        self.label_2.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center"><span style=" font-size:12pt;">UI design</span></p><p align="center"><span style=" font-size:11pt;">is my</span></p><p align="center"><span style=" font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline;">passion</span></p><p align="center">Borys Staszczak 248958</p></body></html>',
-            )
-        )
-        self.label_3.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center">High Pass Filter</p></body></html>',
-            )
-        )
-        self.label_4.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center">Low Pass Filter</p></body></html>',
-            )
-        )
-        self.label_5.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center">Echo</p></body></html>',
-            )
-        )
-        self.label_6.setText(
-            _translate(
-                "ProcesorySygnaowe",
-                '<html><head/><body><p align="center">Karaoke</p></body></html>',
-            )
-        )
+        self.label_2.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">UI design</span></p><p align=\"center\"><span style=\" font-size:11pt;\">is my</span></p><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline;\">passion</span></p><p align=\"center\">Borys Staszczak 248958</p></body></html>"))
+        self.label_3.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\">High Pass Filter</p></body></html>"))
+        self.label_4.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\">Low Pass Filter</p></body></html>"))
+        self.label_5.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\">Echo</p></body></html>"))
+        self.label_6.setText(_translate("ProcesorySygnaowe", "<html><head/><body><p align=\"center\">Karaoke</p></body></html>"))
         self.label_7.setText(_translate("ProcesorySygnaowe", "29Hz"))
         self.label_8.setText(_translate("ProcesorySygnaowe", "59Hz"))
         self.label_9.setText(_translate("ProcesorySygnaowe", "119Hz"))
